@@ -1,25 +1,84 @@
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  background: #c7e1ff;
+  background: linear-gradient(150deg, #ffd3e6 0%, #c7e1ff 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: white;
+  padding: 20px;
+  margin-top: 24px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 9px #4875aa;
+}
+
 .player {
+  flex: 1 0 640px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#media-player,
+.album-artwork {
+  height: 240px;
+  box-shadow: 0px 3px 9px #4875aa;
+  margin-bottom: 15px
+}
+
+.song-title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.song-artist {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.controls button {
+  padding: 7px 10px;
+  margin-top: 15px;
+}
+
+.controls button img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.8;
+}
+
+.controls button:disabled img {
+  opacity: 0.3;
+}
+
 .track-list {
   padding: 10px;
+  align-self: flex-start;
 }
 
 .track-list li {
   list-style: none;
   display: flex;
   margin: 10px 0;
+  flex-direction: row-reverse;
 }
 
-.track-list li h1 {
+.track-list li label {
   flex: 1;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .track-list li img {
-  height: 120px;
+  width: 95px;
+  height: 95px;
   margin-right: 10px;
+  object-fit: cover;
 }
