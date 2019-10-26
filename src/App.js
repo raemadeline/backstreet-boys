@@ -6,7 +6,8 @@ import $ from 'jquery';
 class App extends React.Component {
   state = {
     tracks: [],
-    currentIndex: 0
+    currentIndex: 0,
+    playing: false
   }
 
   componentDidMount() {
@@ -22,11 +23,28 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     const currentTrack = this.state.tracks[this.state.currentIndex]
     const duration = currentTrack.duration;
-    console.log(duration)
-    debugger
+
     setTimeout(() => {
-      this.setState({ currentIndex: this.state.currentIndex++ })
+      this.nextTrack()
     }, duration)
+  }
+
+  previousTrack = () => {
+    this.setState({ currentIndex: this.state.currentIndex - 1 })
+  }
+
+  nextTrack = () => {
+    this.setState({ currentIndex: this.state.currentIndex + 1 })
+  }
+
+  togglePlayPause = () => {
+    if (this.state.playing) {
+      this.setState({ playing: false })
+      $('#media-player').trigger("pause");
+    } else {
+      this.setState({ playing: true })
+      $('#media-player').trigger("play");
+    }
   }
 
   renderTrack(track, i) {
@@ -57,19 +75,41 @@ class App extends React.Component {
     let media;
     if(mediaUrl.startsWith("https://audio-ssl.itunes.apple.com/")) {
       // audio
-      media = <audio controls>
+      media = <audio id="media-player" controls>
         <source src={mediaUrl} />
         Your browser does not support the audio element.
       </audio>
     } else {
       // video
-      media = <video width="320" height="240" controls>
+      media = <video id="media-player" width="320" height="240" controls>
         <source src={mediaUrl} />
         Your browser does not support the video tag.
       </video>
     }
 
-    return media;
+    const nextDisabled = this.state.currentIndex === this.state.tracks.length - 1;
+    const previousDisabled = this.state.currentIndex === 0;
+
+    return <div className="player">
+      <label>{title}</label>
+      {media}
+      <div className="controls">
+      <button
+        disabled={previousDisabled}
+        onClick={this.previousTrack}>
+        Previous
+      </button>
+      <button
+        onClick={this.togglePlayPause}>
+        {this.state.playing ? "Pause" : "Play"}
+      </button>
+      <button
+        disabled={nextDisabled}
+        onClick={this.nextTrack}>
+        Next
+      </button>
+      </div>
+    </div>;
   }
 
   render() {
