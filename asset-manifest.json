@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/anchor-project/static/css/main.16420823.chunk.css",
-    "main.js": "/anchor-project/static/js/main.6c54942d.chunk.js",
-    "main.js.map": "/anchor-project/static/js/main.6c54942d.chunk.js.map",
-    "runtime-main.js": "/anchor-project/static/js/runtime-main.735156a0.js",
-    "runtime-main.js.map": "/anchor-project/static/js/runtime-main.735156a0.js.map",
-    "static/js/2.33008b14.chunk.js": "/anchor-project/static/js/2.33008b14.chunk.js",
-    "static/js/2.33008b14.chunk.js.map": "/anchor-project/static/js/2.33008b14.chunk.js.map",
-    "index.html": "/anchor-project/index.html",
-    "precache-manifest.9985377cd7eca01965218a1743d93c78.js": "/anchor-project/precache-manifest.9985377cd7eca01965218a1743d93c78.js",
-    "service-worker.js": "/anchor-project/service-worker.js",
-    "static/css/main.16420823.chunk.css.map": "/anchor-project/static/css/main.16420823.chunk.css.map",
-    "static/media/media-pause.svg": "/anchor-project/static/media/media-pause.624c0026.svg",
-    "static/media/media-play.svg": "/anchor-project/static/media/media-play.8ea16cdc.svg",
-    "static/media/media-step-backward.svg": "/anchor-project/static/media/media-step-backward.b7e10ab4.svg",
-    "static/media/media-step-forward.svg": "/anchor-project/static/media/media-step-forward.26c8b12f.svg"
+    "main.css": "/backstreet-boys/static/css/main.16420823.chunk.css",
+    "main.js": "/backstreet-boys/static/js/main.e5970d5e.chunk.js",
+    "main.js.map": "/backstreet-boys/static/js/main.e5970d5e.chunk.js.map",
+    "runtime-main.js": "/backstreet-boys/static/js/runtime-main.ad7c3b02.js",
+    "runtime-main.js.map": "/backstreet-boys/static/js/runtime-main.ad7c3b02.js.map",
+    "static/js/2.33008b14.chunk.js": "/backstreet-boys/static/js/2.33008b14.chunk.js",
+    "static/js/2.33008b14.chunk.js.map": "/backstreet-boys/static/js/2.33008b14.chunk.js.map",
+    "index.html": "/backstreet-boys/index.html",
+    "precache-manifest.469f15815b45a78705750f611ea1a1ee.js": "/backstreet-boys/precache-manifest.469f15815b45a78705750f611ea1a1ee.js",
+    "service-worker.js": "/backstreet-boys/service-worker.js",
+    "static/css/main.16420823.chunk.css.map": "/backstreet-boys/static/css/main.16420823.chunk.css.map",
+    "static/media/media-pause.svg": "/backstreet-boys/static/media/media-pause.624c0026.svg",
+    "static/media/media-play.svg": "/backstreet-boys/static/media/media-play.8ea16cdc.svg",
+    "static/media/media-step-backward.svg": "/backstreet-boys/static/media/media-step-backward.b7e10ab4.svg",
+    "static/media/media-step-forward.svg": "/backstreet-boys/static/media/media-step-forward.26c8b12f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.735156a0.js",
+    "static/js/runtime-main.ad7c3b02.js",
     "static/js/2.33008b14.chunk.js",
     "static/css/main.16420823.chunk.css",
-    "static/js/main.6c54942d.chunk.js"
+    "static/js/main.e5970d5e.chunk.js"
   ]
 }
