@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8919c4e3e32b15257152b4bb8276dbf8",
+    "revision": "070c1b49cc4311bc0771b39ac203d4b6",
     "url": "/backstreet-boys/index.html"
   },
   {
-    "revision": "1abfb63dc2b50775ec88",
-    "url": "/backstreet-boys/static/css/main.16420823.chunk.css"
+    "revision": "5661d3c9224a965d3681",
+    "url": "/backstreet-boys/static/css/main.a9c66ef7.chunk.css"
   },
   {
     "revision": "76a86e9ed7cbbb050a1a",
     "url": "/backstreet-boys/static/js/2.33008b14.chunk.js"
   },
   {
-    "revision": "1abfb63dc2b50775ec88",
+    "revision": "5661d3c9224a965d3681",
     "url": "/backstreet-boys/static/js/main.e5970d5e.chunk.js"
   },
   {

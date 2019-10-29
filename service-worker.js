@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/backstreet-boys/precache-manifest.469f15815b45a78705750f611ea1a1ee.js"
+  "/backstreet-boys/precache-manifest.0c9a6cb2dd32673be9f33651647f6802.js"
 );
 
 self.addEventListener('message', (event) => {
