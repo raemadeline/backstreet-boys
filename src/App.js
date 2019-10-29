@@ -22,11 +22,10 @@ class App extends React.Component {
       this.setState({ tracks: data.tracks })
     })
 
-    $(document).bind('keypress', (e) => {
-      e.preventDefault();
-
+    $(document).bind('keydown', (e) => {
       //space bar
       if (e.which === 32){
+        e.preventDefault();
         this.togglePlayPause();
       }
       //right arrow
@@ -41,44 +40,49 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const player = document.getElementById("media-player")
+
+    // initial data fetch, load first song and set eventlistener for end
+    if (this.state.tracks.length > 0 && prevState.tracks.length === 0) {
+      player.load();
+      player.addEventListener('ended', () => { this.nextTrack() });
+    }
+
+    // track changes (next, back, jump to song)
     if (this.state.currentIndex !== prevState.currentIndex) {
-      const currentTrack = this.state.tracks[this.state.currentIndex]
-      const duration = currentTrack.duration;
+      player.load();
+      player.addEventListener('ended', () => { this.nextTrack() });
 
-      setTimeout(() => {
-        this.nextTrack()
-      }, duration)
+      if (this.state.playing) {
+        document.getElementById("media-player").play();
+      }
     }
 
+    // play
     if (this.state.playing && !prevState.playing) {
-      $('#media-player').trigger("play");
+      player.play();
     }
 
+    // pause
     if (prevState.playing && !this.state.playing) {
-      $('#media-player').trigger("pause");
+      player.pause();
     }
   }
 
   previousTrack = () => {
-    this.setState({ currentIndex: this.state.currentIndex - 1 })
+    this.setState({ currentIndex: this.state.currentIndex - 1 });
   }
 
   nextTrack = () => {
-    this.setState({ currentIndex: this.state.currentIndex + 1 })
+    this.setState({ currentIndex: this.state.currentIndex + 1 });
   }
 
   skipToTrack = (index) => {
-    this.setState({ currentIndex: index })
+    this.setState({ currentIndex: index });
   }
 
   togglePlayPause = () => {
-    if (this.state.playing) {
-      this.setState({ playing: false })
-      $('#media-player').trigger("pause");
-    } else {
-      this.setState({ playing: true })
-      $('#media-player').trigger("play");
-    }
+    this.setState({ playing: !this.state.playing });
   }
 
   renderTrack(track, i) {
@@ -124,6 +128,7 @@ class App extends React.Component {
 
   renderCurrentlyPlaying() {
     const trackCount = this.state.tracks.length
+    // data hasn't loaded, or the index got out of bounds somehow
     if (trackCount < 1 || this.state.currentIndex >= trackCount) {
       return null;
     }
